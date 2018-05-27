@@ -25,7 +25,7 @@ public class Student {
     @Transient
     private long age;
 
-    @OneToOne(mappedBy = "student", fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "address_id")
     private Address address;
 
