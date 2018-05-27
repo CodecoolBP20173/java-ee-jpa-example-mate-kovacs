@@ -24,7 +24,8 @@ public class Student {
     @Transient
     private long age;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id")
     private Address address;
 
     @ElementCollection

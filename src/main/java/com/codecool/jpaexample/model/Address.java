@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 
 @Entity
+@Table(name = "address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +16,10 @@ public class Address {
     private String city;
     private String addr;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id")
+    private Student student;
+
     public Address() {
     }
 
@@ -23,6 +28,10 @@ public class Address {
         this.zipcode = zipcode;
         this.city = city;
         this.addr = addr;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public long getId() {
