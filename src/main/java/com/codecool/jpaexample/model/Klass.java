@@ -14,8 +14,7 @@ public class Klass {
 
     private String name;
 
-    @OneToMany
-    @JoinColumn(name = "class_id")
+    @OneToMany(mappedBy = "klass")
     private Set<Student> students = new HashSet<>();
 
     public Klass() {}

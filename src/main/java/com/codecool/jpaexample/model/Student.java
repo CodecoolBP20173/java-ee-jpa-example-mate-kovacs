@@ -33,6 +33,10 @@ public class Student {
     @CollectionTable(name = "Phone")
     private List<String> phoneNumbers;
 
+    @ManyToOne
+    @JoinColumn(name = "class_id")
+    private Klass klass;
+
     public Student() {
     }
 
@@ -92,6 +96,10 @@ public class Student {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public void setKlass(Klass klass) {
+        this.klass = klass;
     }
 
     @Override
