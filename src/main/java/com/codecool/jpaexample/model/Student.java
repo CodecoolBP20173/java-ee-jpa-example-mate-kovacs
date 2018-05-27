@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "student")
 public class Student {
 
     @Id
@@ -24,7 +25,7 @@ public class Student {
     @Transient
     private long age;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "student", fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private Address address;
 
