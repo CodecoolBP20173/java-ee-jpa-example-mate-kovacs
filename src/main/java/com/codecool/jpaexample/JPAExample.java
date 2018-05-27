@@ -35,6 +35,7 @@ public class JPAExample {
         Student student = new Student("Ödön", "odon@tokodon.hu", birthDate1, address, phoneNumbers);
         address.setStudent(student);
         classBp2.addStudent(student);
+        student.setKlass(classBp2);
 
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
@@ -48,6 +49,7 @@ public class JPAExample {
         Student student2 = new Student("Aladár", "ktyfl@gmail.com", birthDate2, address2, phoneNumbers);
         address2.setStudent(student2);
         classBp2.addStudent(student2);
+        student2.setKlass(classBp2);
 
         transaction.begin();
         em.persist(student2);
