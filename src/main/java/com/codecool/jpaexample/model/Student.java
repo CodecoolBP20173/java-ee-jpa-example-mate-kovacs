@@ -42,17 +42,9 @@ public class Student {
                 / (60L * 60L * 1000L * 24L * 365L);
     }
 
-    public Student(String name, String email, Date dateOfBirth, Address address) {
+    public Student(String name, String email, Date dateOfBirth, Address address, List<String> phoneNumbers) {
         this(name, email, dateOfBirth);
         this.address = address;
-    }
-
-    public Student(String name, String email, Date dateOfBirth, List<String> phoneNumbers) {
-        this.name = name;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-        this.age = (Calendar.getInstance().getTimeInMillis() - dateOfBirth.getTime())
-                / (60L * 60L * 1000L * 24L * 365L);
         this.phoneNumbers = phoneNumbers;
     }
 
