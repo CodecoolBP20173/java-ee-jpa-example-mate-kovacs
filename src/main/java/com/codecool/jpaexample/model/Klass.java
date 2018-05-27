@@ -4,8 +4,18 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "Class")
 public class Klass {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
     private String name;
+
+    @OneToMany
+    @JoinColumn(name = "class_id")
     private Set<Student> students = new HashSet<>();
 
     public Klass() {}
